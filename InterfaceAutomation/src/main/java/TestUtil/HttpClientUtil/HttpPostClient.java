@@ -13,9 +13,9 @@ import org.testng.Assert;
 public class HttpPostClient {
 
     public static void main(String[] args) throws Exception{
-        String uri ="http://127.0.0.1:8899/post/with/headers";
+        String uri ="http://127.0.0.1:8899/postdemo";
         // 声明一个 client 对象，用于方法的执行
-        CloseableHttpClient httpclient = HttpClients.createDefault();
+       CloseableHttpClient httpclient = HttpClients.createDefault();
 
 
 
@@ -24,7 +24,7 @@ public class HttpPostClient {
 
         // 添加参数
         JSONObject param = new JSONObject();
-        param.put("namell", "huanhansan");
+        param.put("name", "huanhansan");
         param.put("age", "18");
 
         // 设置请求头信息
@@ -41,14 +41,7 @@ public class HttpPostClient {
         // 获取响应结果
         results = EntityUtils.toString(response.getEntity(),"utf-8");
         System.out.println(results);
-        JSONObject resultJson = new JSONObject(results);
 
-        // 获取到结果值
-        String success = (String) resultJson.get("huanhansan");
-        String status = (String) resultJson.get("status");
-        // 具体的判断返回结果值
-        Assert.assertEquals("success", success);
-        Assert.assertEquals("1", status);
 
 
     }
