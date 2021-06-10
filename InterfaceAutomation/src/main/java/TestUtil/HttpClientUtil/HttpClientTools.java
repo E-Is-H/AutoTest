@@ -45,7 +45,7 @@ public class HttpClientTools {
         HttpPost post = new HttpPost(url);
 
         // 将参数信息添加到方法中
-        StringEntity entity = new StringEntity(param.toString(),"utf-8");
+        StringEntity entity = new StringEntity(param.toString());
         post.setEntity(entity);
         // 声明一个对象来进行响应结果存储
         String results;
@@ -54,7 +54,7 @@ public class HttpClientTools {
         // 执行 POST 方法
         HttpResponse response = httpclient.execute(post);
         // 获取响应结果
-        results = EntityUtils.toString(response.getEntity(),"utf-8");
+        results = EntityUtils.toString(response.getEntity());
         return results;
     }
 }
