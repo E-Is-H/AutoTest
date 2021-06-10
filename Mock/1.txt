@@ -1,0 +1,10 @@
+http://127.0.0.1:8899/getnotparameter                                    这是一个不带参数的get请求
+http://127.0.0.1:8899/getparameter?name=123456&password=123456           这是一个带参数的get请求,请求信息 name：123456 password：123456
+http://127.0.0.1:8899/getcookies                                         这是一个返回cookies信息的get请求，login :true
+http://127.0.0.1:8899/setcookies                                         这是一个需要携带 cookies 信息才能访问的 get 请求 login :true
+http://127.0.0.1:8899/getparametercookies?name=123456&age=18             这是一个带 cookies 信息的 GET 请求
+
+
+http://127.0.0.1:8899/postdemo               这是一个不带参数的post请求
+http://127.0.0.1:8899/postwithparam          这是一个带参数的get请求,请求信息 name：123456 set：18
+http://127.0.0.1:8899/post/with/headers      这是一个带 header 信息的 post 请求

@@ -1,0 +1,45 @@
+[
+  {
+    "description":"这是一个不带参数的POST 请求",
+    "request":{
+      "uri":"/postdemo",
+      "method":"post"
+    },
+    "response":{
+      "text":"这是一个不带参数的POST 请求"
+    }
+  },
+  {
+    "description":"这是一个带参数的 POST 请求",
+    "request":{
+      "uri":"/postwithparam",
+      "method":"post",
+      "forms":{
+        "name":"123456",
+        "sex":"18"
+      }
+    },
+    "response":{
+      "text":"这是一个带参数的post请求,请求信息 name：123456 set：18"
+    }
+  },
+  {
+    "description":"这是一个带 cookies 信息的 post 请求",
+    "request":{
+      "uri":"/post/with/headers",
+      "method":"post",
+
+      "json":{
+        "name":"huanhansan",
+        "age":"18"
+      }
+    },
+    "response":{
+	"status":200,
+      "json":{
+        "huanhansan":"success",
+        "status":1
+      }
+    }
+  }
+]

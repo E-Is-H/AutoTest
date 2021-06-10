@@ -1,4 +1,4 @@
-package TestUtil;
+package TestUtil.HttpClientUtil;
 
 
 
@@ -9,10 +9,10 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
-public class HttpClient {
+public class HttpGetClient {
     public static void main(String[] args) throws Exception {
         // interface address
-        String uri ="http://127.0.0.1:8899/register";
+        String uri ="http://127.0.0.1:8899/getparameter";
         // Test Data
         String name ="123456";
         String password = "123456";

@@ -1,0 +1,94 @@
+[
+  {
+    "description":"这是一个不带参数的get请求",
+    "request":{
+      "uri": "/getnotparameter",
+      "method": "get"
+
+    },
+    "response": {
+	"headers":{
+      "Content-Type":"text/html;charset=gbk"
+    },
+      "text":" 这是一个不带参数的get请求"
+    }
+  },
+  
+  {
+    "description":"这是一个带参数的get请求",
+    "request":{
+      "uri": "/getparameter",
+      "method": "get",
+	  "queries":{
+	      "name":"123456",
+		  "password":"123456"
+	  }
+
+    },
+    "response": {
+	"headers":{
+      "Content-Type":"text/html;charset=gbk"
+    },
+      "text":" 这是一个带参数的get请求,请求信息 name：123456 password：123456"
+    }
+  },
+  
+  {
+    "description":"这是一个返回cookies信息的get请求",
+    "request":{
+      "uri": "/getcookies",
+      "method": "get"
+
+    },
+    "response": {
+	"headers":{
+      "Content-Type":"text/html;charset=gbk"
+    },
+	  "cookies":{
+	   "login":"true"
+	  },
+      "text":" 这是一个返回cookies信息的get请求，login :true"
+    
+  }
+  },
+  {
+    "description":"这是一个带 cookies 信息的 GET 请求",
+    "request":{
+      "uri":"/setcookies",
+      "method":"get",
+      "cookies":{
+        "login":"true"
+      }
+    },
+    "response":{
+	"headers":{
+      "Content-Type":"text/html;charset=gbk"
+    },
+      "text":"这是一个需要携带 cookies 信息才能访问的 get 请求 login :true"
+    }
+  },
+  {
+    "description":"这是一个带 cookies 信息的 GET 请求",
+    "request":{
+      "uri":"/getparametercookies",
+      "method":"get",
+      "cookies":{
+        "login":"true"
+      },
+      "json":{
+        "name":"123456",
+        "age":"18"
+      }
+    },
+    "response":{
+	"headers":{
+      "Content-Type":"text/html;charset=gbk"
+    },
+      "text":"这是一个需要携带 cookies 与参数，信息才能访问的 get 请求 login :true"
+    }
+  }
+  
+  
+  
+  
+]
