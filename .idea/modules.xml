@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Chapter.iml" filepath="$PROJECT_DIR$/Chapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AtuoTest.iml" filepath="$PROJECT_DIR$/AtuoTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/InterfaceAutomation/Chapter5.iml" filepath="$PROJECT_DIR$/InterfaceAutomation/Chapter5.iml" />
       <module fileurl="file://$PROJECT_DIR$/UIAutomation/UIAutomation.iml" filepath="$PROJECT_DIR$/UIAutomation/UIAutomation.iml" />
     </modules>

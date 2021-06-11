@@ -1,0 +1,14 @@
+{
+  "description":"这是一个带参数的 POST 请求",
+  "request":{
+    "uri":"/login",
+    "method":"post",
+    "forms":{
+      "name":"lisu",
+      "password":"18"
+    }
+  },
+  "response":{
+    "text":"这是一个带参数的post请求,请求信息 name：123456 set：18"
+  }
+}

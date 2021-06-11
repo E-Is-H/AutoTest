@@ -8,7 +8,7 @@ import java.io.File;
 public class ExcelUtil {
    public  static Object[][] data() {
        //定义xls路径
-       String datapath="F:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase.xls";
+       String datapath="E:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase.xls";
        Object[][] datas=null;
        try {
            //获取WorkBook对像

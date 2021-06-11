@@ -7,13 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="UIAutomation" />
-        <module name="Chapter5" />
         <module name="InterfaceAutomation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Chapter" target="1.5" />
-      <module name="Chapter5" target="1.5" />
+      <module name="AtuoTest" target="1.5" />
       <module name="InterfaceAutomation" target="1.5" />
       <module name="UIAutomation" target="1.5" />
     </bytecodeTargetLevel>
