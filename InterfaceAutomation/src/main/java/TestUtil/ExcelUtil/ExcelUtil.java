@@ -6,27 +6,38 @@ import java.io.File;
 
 
 public class ExcelUtil {
-   public  static Object[][] data() {
+    /**
+     *
+     * @param excelpath   excel路径
+     * @param rows        行数
+     * @param cells        列数
+     * @return              表格中的数据
+     */
+   public  static Object[][] data(String excelpath,int [] rows ,int [] cells) {
        //定义xls路径
-       String datapath="E:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase.xls";
+       String datapath="excelpath";
+       //String datapath="E:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase.xls";
        Object[][] datas=null;
        try {
            //获取WorkBook对像
            Workbook workbook=WorkbookFactory.create(new File(datapath));
            //获取sheet对象
-           Sheet sheet=workbook.getSheet("用例");
-           datas= new Object[6][2];
-           //获取行，第一行是说明，所以从第二行开始,表示获取第一行sheet.getRow(1);
-           for (int i =1;i<=6;i++){
-              Row row= sheet.getRow(i);
+           Sheet sheet=workbook.getSheet("Login");
+           //定义保存数据的数组，几行几列的数据,rows.length :我要去几行的数据,cells.length :取几列的数据
+           datas= new Object[rows.length][cells.length];
+           //for 获取行数组里面长度，循环取出
+           for (int i =0;i < rows.length;i++){
+               //根据行索引获取数组中的数据，减一因为getrow方法是从0开始读取excel的所以excel中1在getrow方法就是0
+              Row row= sheet.getRow(rows[i]-1);
                //获取列
-               for (int j=5;j<=6;j++){
+               for (int j=0;j<cells.length;j++){
                    // Row.MissingCellPolicy.CREATE_NULL_AS_BLANK用来解决列值为空
-                  Cell cell=row.getCell(j, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+                  Cell cell=row.getCell(cells[j]-1, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
                   // 设置类型
                    cell.setCellType(CellType.STRING);
                    String value=cell.getStringCellValue();
-                   datas [i-1][j-5]=value;
+                   //把值取出放入二维数组中
+                   datas [i][j]=value;
                }
            }
            //获取列
