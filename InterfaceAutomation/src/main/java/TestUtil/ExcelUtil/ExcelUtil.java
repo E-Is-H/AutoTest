@@ -13,16 +13,16 @@ public class ExcelUtil {
      * @param cells        列数
      * @return              表格中的数据
      */
-   public  static Object[][] data(String excelpath,int [] rows ,int [] cells) {
+   public  static Object[][] data(String excelpath,String sheetName,int [] rows ,int [] cells) {
        //定义xls路径
-       String datapath="excelpath";
-       //String datapath="E:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase.xls";
+       //String datapath=excelpath;
+       //String datapath="F:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase.xls";
        Object[][] datas=null;
        try {
            //获取WorkBook对像
-           Workbook workbook=WorkbookFactory.create(new File(datapath));
+           Workbook workbook=WorkbookFactory.create(new File(excelpath));
            //获取sheet对象
-           Sheet sheet=workbook.getSheet("Login");
+           Sheet sheet=workbook.getSheet(sheetName);
            //定义保存数据的数组，几行几列的数据,rows.length :我要去几行的数据,cells.length :取几列的数据
            datas= new Object[rows.length][cells.length];
            //for 获取行数组里面长度，循环取出

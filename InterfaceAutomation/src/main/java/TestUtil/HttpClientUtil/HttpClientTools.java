@@ -1,5 +1,6 @@
 package TestUtil.HttpClientUtil;
 
+import com.sun.deploy.net.HttpUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -14,7 +15,7 @@ import java.util.Set;
 
 public class HttpClientTools {
 
-    public String doget(String url, Map<String ,String>params) throws Exception{
+    public static String doget(String url, Map<String ,String>params) throws Exception{
         Set<String> keys=params.keySet();
         int mark=1;
         for (String name:keys){
@@ -33,7 +34,7 @@ public class HttpClientTools {
         String responsedata= EntityUtils.toString(httpResponse.getEntity());
         return responsedata;
     }
-    public String doPost(String url, Map<String ,String>params)throws Exception{
+    public static String doPost(String url, Map<String ,String>params)throws Exception{
         Set<String> keys=params.keySet();
         JSONObject param = new JSONObject();
         for (String name:keys){
@@ -57,4 +58,15 @@ public class HttpClientTools {
         results = EntityUtils.toString(response.getEntity());
         return results;
     }
+
+    public static String doService(String Url, String type,Map<String ,String> params) throws Exception {
+        String result;
+        if("post".equalsIgnoreCase(type)){
+            result=HttpClientTools.doPost(Url, params);
+        }else {
+            result=HttpClientTools.doget(Url, params);
+        }
+        return result;
+    }
+
 }
