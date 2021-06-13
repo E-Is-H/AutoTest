@@ -41,5 +41,24 @@
         "status":1
       }
     }
+  },
+  {
+    "description":"这是一个带 cookies 信息的 post 请求",
+    "request":{
+      "uri":"/post/with/login",
+      "method":"post",
+
+      "json":{
+        "name":"huanhansan",
+        "age":"18"
+      }
+    },
+    "response":{
+      "status":200,
+      "json":{
+        "huanhansan":"success",
+        "status":1
+      }
+    }
   }
 ]

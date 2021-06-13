@@ -1,13 +1,26 @@
 package TestUtil.ExcelUtil;
 
 
+import CaseData.Case3;
+import CaseData.CaseUtil;
+import CaseData.Rest;
+import CaseData.RestUtil;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.formula.functions.T;
 import org.apache.poi.ss.usermodel.*;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class ExcelUtil {
+    //根据caseId获取行数
+    public  static Map<String,Integer> row= new HashMap<String, Integer>();
+    // 保存列名列索引
+    public  static Map<String,Integer> cell= new HashMap<String, Integer>();
     /**
      *
      * @param excelpath   excel路径
@@ -54,7 +67,9 @@ public class ExcelUtil {
      * @param excelpath 文件路径
      * @param sheetname  excel表单名
      */
-    public static void load(String excelpath, String sheetname) {
+    public static <T> void load(String excelpath, String sheetname ,Class<T> tClass) throws Exception {
+        //创建类
+       // Class clazz = tClass;
         //创建workbook对象
         Workbook workbook= null;
         try {
@@ -84,28 +99,70 @@ public class ExcelUtil {
             tilte=tilte.substring(0, tilte.indexOf("("));
             System.out.print(tilte);
             fileds[i]=tilte;
+        // String mothername="set"+tilte;
+        // Method method=clazz.getMethod(mothername, String.class);
+        // method.invoke()
+
         }
         // 获取最后一行
        int  Indexof=sheet.getLastRowNum();
         //循环处理每一行
 
-        for (int i=1;i<Indexof;i++){
+        for (int i=1;i<=Indexof;i++){
+            //创建原始对象
+          Object object=  tClass.newInstance();
             //拿到一个数据行
             Row row=sheet.getRow(i);
-            //拿到此数据行上面的每一列
+            //拿到此数据行上面的每一列,封装到对象里面去
             for (int j=0;j<lastcellnum;j++){
               Cell cell=  row.getCell(j, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
               cell.setCellType(CellType.STRING);
               String value=cell.getStringCellValue();
+             //获取要反射的方法
+                String mothername="set"+fileds[j];
+                //获取要反射的对象
+                Method method=tClass.getMethod(mothername, String.class);
+               // 完成反射调用
+                method.invoke(object,value);
             }
+            if (object instanceof Case3) {  //判断object 类型
+               Case3 case3 = (Case3) object;
+                CaseUtil.cases.add(case3);
+            }else if(object instanceof Rest){
+                Rest rest = (Rest) object;
+               RestUtil.rests.add(rest);
+
+            }
+
         }
         //获取行
         //获取列
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-            ExcelUtil.load("F:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase-v3.xls", "用例");
+        ExcelUtil.load("F:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase-v3.xls","用例",Case3.class);
+        for (Case3 cs :CaseUtil.cases){
+            System.out.print(cs);
+            System.out.print("\n");
+        }
+        for (Rest cs :RestUtil.rests){
+            System.out.print(cs);
+            System.out.print("\n");
+        }
+    }
+
+
+    /**
+     * 回写数据
+     * @param caseId
+     * @param cellname  列名
+     * @param result     结果
+     */
+    public static void writeAxtualResponseData(String caseId, String cellname, String result) {
+        int rownum=row.get(caseId);
+        int cellnum=cell.get(cellname);
+
 
     }
 }
