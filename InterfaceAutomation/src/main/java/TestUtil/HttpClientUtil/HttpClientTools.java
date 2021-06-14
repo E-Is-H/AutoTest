@@ -130,6 +130,14 @@ public class HttpClientTools {
         }
     }
 
+    /**
+     *
+     * @param Url    接口地址
+     * @param type    访问方法
+     * @param params   参数
+     * @return
+     * @throws Exception
+     */
     public static String doService(String Url, String type,Map<String ,String> params) throws Exception {
         String result;
         if("post".equalsIgnoreCase(type)){
@@ -140,6 +148,10 @@ public class HttpClientTools {
         return result;
     }
 
+    /**
+     * 这个是用来调用dopost，doget方法验证是否获取cookies的
+     * @param args
+     */
     public static void main(String[] args) {
         // 获取cookies
             Map<String,String> mapparems=new HashMap<String, String>();
