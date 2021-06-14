@@ -1,14 +1,46 @@
-{
-  "description":"这是一个带参数的 POST 请求",
-  "request":{
-    "uri":"/login",
-    "method":"post",
-    "forms":{
-      "name":"lisu",
-      "password":"18"
+[
+
+  {
+    "description":"这是一个登录的pots接口",
+    "request":{
+      "uri":"/login",
+      "method":"post",
+      "forms":{
+        "name":"lisu",
+        "password":"123456"
+      }
+    },
+    "response":{
+      "text":"这是一个带参数的post请求,请求信息 name：123456 set：18",
+      "json":{
+        "login":"true",
+        "status":1
+      }
     }
   },
-  "response":{
-    "text":"这是一个带参数的post请求,请求信息 name：123456 set：18"
+  {
+    "description":"这是一个带 cookies 信息的 post 请求",
+    "request":{
+      "uri":"/index",
+      "method":"post",
+      "forms":{
+        "name":"lisu",
+        "password":"123456"
+      },
+      "cookies":{
+        "login":"true"
+      }
+    },
+    "response":{
+      "text":"这是首页",
+      "json":{
+        "login":"true",
+        "status":1
+      }
+
+    }
   }
-}
+
+
+
+]

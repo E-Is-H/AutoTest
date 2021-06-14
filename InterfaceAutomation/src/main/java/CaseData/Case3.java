@@ -9,7 +9,7 @@ public  class Case3 {
     private String TestData;
     private String ExpectedResponseData;
     private String AxtualResponseData;
-    private String Passornot;
+
 
     public String getCaseId() {
         return CaseId;
@@ -59,18 +59,11 @@ public  class Case3 {
         AxtualResponseData = axtualResponseData;
     }
 
-    public String getPassornot() {
-        return Passornot;
-    }
-
-    public void setPassornot(String passornot) {
-        Passornot = passornot;
-    }
 
     @Override
     public String toString() {
 
-        return "CaseId=" +CaseId +",Desc=" + Desc + ", ApiId=" + ApiId + ", TestData=" +TestData+ ", ExpectedResponseData=" +ExpectedResponseData+ ", AxtualResponseData=" +AxtualResponseData+ ", Passornot=" + Passornot;
+        return "CaseId=" +CaseId +",Desc=" + Desc + ", ApiId=" + ApiId + ", TestData=" +TestData+ ", ExpectedResponseData=" +ExpectedResponseData+ ", AxtualResponseData=" +AxtualResponseData;
     }
 
 }

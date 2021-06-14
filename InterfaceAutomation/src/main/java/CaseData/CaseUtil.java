@@ -14,7 +14,7 @@ public class CaseUtil {
     static {
         //将所有的数据解析封装到cases中
         try {
-            ExcelUtil.load("F:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase-v3.xls","用例",Case3.class);
+            ExcelUtil.load("F:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase-v4.xls","用例",Case3.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -30,14 +30,18 @@ public class CaseUtil {
         // 通过循环找到对应的数据
         Class<Case3> clazz=Case3.class;
         ArrayList<Case3> case3s=new ArrayList<Case3>();
+
         for (Case3 listdata:cases){
             if(listdata.getApiId().equals(apiId)) {
                 case3s.add(listdata);
             }
         }
+        //case3s.size():对象数据的大小，cellName.length：数据的列书
         Object[][] datas=new Object[case3s.size()][cellName.length];
         for (int i=0;i<case3s.size();i++){
+            //Case3 获取每一个对象数据
             Case3 cs =case3s.get(i);
+            // 获取每一列数据
             for(int j=0;j<cellName.length;j++){
                 //反射的方法名
                 String methodname="get"+cellName[j];
@@ -52,7 +56,7 @@ public class CaseUtil {
      return datas;
     }
 
-    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+   /**public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         String [] cellName={"TestData"};
         Object [][] datas=getCaseDatasByapId("1",cellName);
         for (Object[] objects :datas){
@@ -61,5 +65,5 @@ public class CaseUtil {
             }
             System.out.println();
         }
-    }
+    }**/
 }
