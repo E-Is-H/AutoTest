@@ -5,11 +5,14 @@ import CaseData.Case3;
 import CaseData.CaseUtil;
 import CaseData.Rest;
 import CaseData.RestUtil;
+import TestUtil.Authenticacation.WriteBackData;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 import java.io.*;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -18,6 +21,10 @@ public class ExcelUtil {
     public  static Map<String,Integer> rowvaule= new HashMap<String, Integer>();
     // 保存列名列索引
     public  static Map<String,Integer> cellvalue= new HashMap<String, Integer>();
+    //用来保存批量回写数据对象
+    public static List<WriteBackData> writeBackDataList= new ArrayList<WriteBackData>();
+
+
     static {
         //映射数据加载
         loadRownumAndCellnumMapp("F:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase-v4.xls","用例");
@@ -262,6 +269,68 @@ public class ExcelUtil {
                     e.printStackTrace();
 
             }
+        }
+
+
+    }
+
+
+    /**
+     * Excel不浪费时间
+     *  路径
+     */
+    public static void batchWriteBackDatas(String Path) {
+        InputStream inputStream=null;
+        OutputStream outputStream=null;
+        try {
+            /* 读取文件*/
+            inputStream=new FileInputStream(new File(Path));
+            /* 获取整个excel表格*/
+            Workbook workbook=WorkbookFactory.create(inputStream);
+            /* 循环获取writeBackDataList对象数组中的数据*/
+            for(WriteBackData writeBackData:writeBackDataList){
+                /* 获取表格中页面名字*/
+                String sheetName=writeBackData.getSheetName();
+                /* 把表格名放入sheet中获取到整个表格,返回一个*/
+               Sheet sheet= workbook.getSheet(sheetName);
+                /* 获取行caseId*/
+               String caseId =writeBackData.getCaseId();
+                /* 获取行索引，跟句CaseId，获得这行的位置*/
+                int rownum=rowvaule.get(caseId);
+                /* 根据行索引获取这行数据 AxtualResponseData*/
+                Row row=sheet.getRow(rownum);
+                /* 获取列名*/
+               String cellName= writeBackData.getCellName();
+                /* 根据列名，获取列索引*/
+                int  cellnum=cellvalue.get(cellName);
+                /* 根据列索引获取这列*/
+                Cell cell=row.getCell(cellnum, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+                /* 指定cell类型*/
+                cell.setCellType(CellType.STRING);
+                /* 获取实际数据结果*/
+                String result=writeBackData.getResult();
+                /* 数据已经放入表格中*/
+                cell.setCellValue(result);
+                /* 写入数据*/
+            }
+            outputStream=new FileOutputStream(new File(Path));
+            workbook.write(outputStream);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+
+                try {
+                    if (inputStream!=null) {
+                        inputStream.close();
+                    }else if (outputStream!=null){
+                        outputStream.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
         }
 
 

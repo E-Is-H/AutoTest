@@ -35,6 +35,9 @@ public class ExcelUtilTest4 {
 
           String reult=HttpClientTools.doService(url,type,pamar);
           System.out.print("**********"+reult);
+            /**
+             * 这个方法也是批量写，但是很耗时间，请查看ExcelUtil5里面的方法
+             */
            ExcelUtil.writeAxtualResponseData("F:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase-v4.xls","用例",CaseId,"AxtualResponseData",reult);
         }
 
