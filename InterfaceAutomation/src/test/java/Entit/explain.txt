@@ -1,0 +1,27 @@
+
+Case3：用来读取用例表单中的数据
+ private String CaseId;
+    private String Desc;
+    private String ApiId;
+    private String TestData;
+    private String ExpectedResponseData;
+    private String AxtualResponseData;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DBQuerResult  ：用来回写sql执行之后返回的数据格式定义的类
+    // 脚本编号
+    private String no;
+    // 脚本执行查到的数据，保存到map中，key：字段名，value：查询到的数据
+    private Map<String,Object> columenLableAndValues;

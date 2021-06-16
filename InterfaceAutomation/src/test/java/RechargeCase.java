@@ -1,4 +1,5 @@
-import CaseData.CaseUtil;
+
+import Util.CaseUtil;
 import org.testng.annotations.DataProvider;
 
 import java.lang.reflect.InvocationTargetException;
