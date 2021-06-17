@@ -24,7 +24,7 @@ public class ExcelUtilTest6 {
 
         /* "CaseId":用例编号,"ApiId":接口地址编号,"TestData":请求数据,"ExpectedResponseData"：期望数据,
         "PreValidateSql"：接口执行前的sql语句,"AfterValidatesql"：接口执行后的sql语句*/
-        String cellName[]={"CaseId","ApiId","TestData","ExpectedResponseData","PreValidateSql","AfterValidatesql"};
+        String cellName[]={"CaseId","ApiId","TestData","ExpectedResponseData","BeforeSql","AfterSql"};
 
         Object[][]  datas= CaseUtil.getCaseDatasByapId("2", cellName);
 
@@ -42,9 +42,10 @@ public class ExcelUtilTest6 {
                 String afterValidateResult= DBCheckUtil.doQuert(objects[5].toString());
                 // 保存结果到对象中数组中，前面我们已经写过这个类与数据，只需要把，写入数据的列与数据换一下即可
                 /* 把数据放入对象之中*/
-                WriteBackData writeBackData=new WriteBackData("用例",CaseId,"afterValidateResult",afterValidateResult);
+                WriteBackData writeBackData=new WriteBackData("用例",CaseId,"BeforeResult",afterValidateResult);
                 // 把对象数据，保存到ExcelUtil对象writeBackDataList数组中
                 ExcelUtil.writeBackDataList.add(writeBackData);
+
 
             }
 

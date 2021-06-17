@@ -9,10 +9,10 @@ public  class Case3 {
     private String TestData;
     private String ExpectedResponseData;
     private String AxtualResponseData;
-    private String PreValidateSql;
-    private String AfterValidatesql;
-    private String PreValidateResult;
-    private String AfterValidateResult;
+    private String BeforeSql;
+    private String AfterSql;
+    private String BeforeResult;
+    private String AfterResult;
 
     public String getCaseId() {
         return CaseId;
@@ -62,42 +62,42 @@ public  class Case3 {
         AxtualResponseData = axtualResponseData;
     }
 
-    public String getPreValidateSql() {
-        return PreValidateSql;
+    public String getBeforeSql() {
+        return BeforeSql;
     }
 
-    public void setPreValidateSql(String preValidateSql) {
-        PreValidateSql = preValidateSql;
+    public void setBeforeSql(String beforeSql) {
+        BeforeSql = beforeSql;
     }
 
-    public String getAfterValidatesql() {
-        return AfterValidatesql;
+    public String getAfterSql() {
+        return AfterSql;
     }
 
-    public void setAfterValidatesql(String afterValidatesql) {
-        AfterValidatesql = afterValidatesql;
+    public void setAfterSql(String afterSql) {
+        AfterSql = afterSql;
     }
 
-    public String getPreValidateResult() {
-        return PreValidateResult;
+    public String getBeforeResult() {
+        return BeforeResult;
     }
 
-    public void setPreValidateResult(String preValidateResult) {
-        PreValidateResult = preValidateResult;
+    public void setBeforeResult(String beforeResult) {
+        BeforeResult = beforeResult;
     }
 
-    public String getAfterValidateResult() {
-        return AfterValidateResult;
+    public String getAfterResult() {
+        return AfterResult;
     }
 
-    public void setAfterValidateResult(String afterValidateResult) {
-        AfterValidateResult = afterValidateResult;
+    public void setAfterResult(String afterResult) {
+        AfterResult = afterResult;
     }
 
     @Override
     public String toString() {
 
-        return "CaseId=" +CaseId +",Desc=" + Desc + ", ApiId=" + ApiId + ", TestData=" +TestData+ ", ExpectedResponseData=" +ExpectedResponseData+ ", AxtualResponseData=" +AxtualResponseData+ ", PreValidateSql=" +PreValidateSql+ ", PreValidateResult=" +PreValidateResult+ ", AfterValidateResult=" +AfterValidateResult+ ", AxtualResponseData=" +AxtualResponseData;
+        return "CaseId=" +CaseId +",Desc=" + Desc + ", ApiId=" + ApiId + ", TestData=" +TestData+ ", ExpectedResponseData=" +ExpectedResponseData+ ", AxtualResponseData=" +AxtualResponseData+ ", BeforeSql=" +BeforeSql+ ", AfterSql=" +AfterSql+ ", BeforeResult=" +BeforeResult+ ", AfterResult=" +AfterResult;
     }
 
 }
