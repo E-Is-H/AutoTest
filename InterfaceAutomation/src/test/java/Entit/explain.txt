@@ -1,23 +1,21 @@
 
-Case3：用来读取用例表单中的数据
- private String CaseId;
+Case3：用来读取用例表单中的数据字段，封装成对象
+    private String CaseId;
     private String Desc;
     private String ApiId;
     private String TestData;
     private String ExpectedResponseData;
     private String AxtualResponseData;
+    private String BeforeSql;
+    private String AfterSql;
+    private String BeforeResult;
+    private String AfterResult;
 
-
-
-
-
-
-
-
-
-
-
-
+DBCheck： 用例读取BeforeSql，AfterSql，封装成对象
+   //保存序号
+    private String no;
+   // 保存sql
+    private String sql;
 
 
 DBQuerResult  ：用来回写sql执行之后返回的数据格式定义的类
@@ -25,3 +23,27 @@ DBQuerResult  ：用来回写sql执行之后返回的数据格式定义的类
     private String no;
     // 脚本执行查到的数据，保存到map中，key：字段名，value：查询到的数据
     private Map<String,Object> columenLableAndValues;
+
+
+Rest：获取接口地址与请求类型
+    private String ApiId;
+    private String ApiName;
+    private String Type;
+    private String Url;
+
+ WriteBackData ：回写数据
+        // 表单名
+        private String sheetName;
+        // 用例编号
+        private  String caseId;
+        // 写到那列的列名，实际数据这列
+        private  String cellName;
+        // 实际数据
+        private  String result;
+
+
+
+   Variable:存储excel变量值
+      private String name;
+      private String value;
+      private String remarks;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <suite name="futureloan">
     <test name="register">
-        <class name="F:\AutoTest\InterfaceAutomation\src\test\java\RechargeCase.java"></class>
+        <class name=""></class>
     </test>
 
 

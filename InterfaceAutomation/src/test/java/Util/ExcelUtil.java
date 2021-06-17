@@ -3,6 +3,7 @@ package Util;
 
 import Entit.Case3;
 import Entit.Rest;
+import Entit.Variable;
 import Entit.WriteBackData;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
@@ -200,6 +201,10 @@ public class ExcelUtil {
             }else if(object instanceof Rest){
                 Rest rest = (Rest) object;
                RestUtil.rests.add(rest);
+
+                }else if(object instanceof Variable){
+                Variable variable = (Variable) object;
+                VariableUtil.variableList.add(variable);
 
             }
 

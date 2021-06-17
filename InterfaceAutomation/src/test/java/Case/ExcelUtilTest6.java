@@ -50,9 +50,9 @@ public class ExcelUtilTest6 {
             }
 
 
-
-            Object object1 = objects[2].toString();
-            Map<String, String>   pamar = (Map<String, String>) JSONObject.parse(object1.toString());
+            TestData=VariableUtil.relacevariable(TestData);
+            //Object object1 = objects[2].toString();
+            Map<String, String>   pamar = (Map<String, String>) JSONObject.parse(TestData);
             String url = RestUtil.geturlByApiId(apiId);
             String type = RestUtil.geturlBytype(apiId);
             String reult= HttpClientTools.doService(url,type,pamar);
