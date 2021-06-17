@@ -97,7 +97,7 @@ public class ExcelUtil {
      * @param cells        列数
      * @return              表格中的数据
      */
-   public  static Object[][] data(String excelpath,String sheetName,int [] rows ,int [] cells) {
+   /*public  static Object[][] data(String excelpath,String sheetName,int [] rows ,int [] cells) {
        //定义xls路径
        //String datapath=excelpath;
        //String datapath="F:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase.xls";
@@ -129,7 +129,7 @@ public class ExcelUtil {
            e.printStackTrace();
        }
        return datas;
-   }
+   }*/
 
     /**
      * 解析指定excel表单的数据，封装为对象
