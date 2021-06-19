@@ -11,7 +11,7 @@ public class VariableUtil {
     static {
         try {
             // 加载数据
-            ExcelUtil.load(System.getProperty("user.dir")+"\\src\\test\\resources\\GetCase-v6.xls", "变量", Variable.class);
+            ExcelUtil.load(System.getProperty("user.dir")+"/src/test/resources/GetCase-v6.xls", "变量", Variable.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
