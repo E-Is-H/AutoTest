@@ -51,4 +51,58 @@
         </dependency>
     </dependencies>
 
+
+
+
+    <!--插件，使用maven命令启动testng-->
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.7.1</version>
+            <configuration>
+                <!--忽略测试套件执行过程失败的测试方法，继续执行剩余的测试类和方法-->
+                <testFailureIgnore>true</testFailureIgnore>
+                <!--指定构建过程中的编码格式
+                <argLine>
+                    -DFile.encoding=UTF-8
+                </argLine>-->
+                <!--指定构建时要执行的套件文件的路径-->
+                <suiteXmlFiles>
+                    <suiteXmlFile>suite.xml</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
+        </plugin>
+    </plugins>
+
+
+
+</build>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </project>

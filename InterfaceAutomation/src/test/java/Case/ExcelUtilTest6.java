@@ -5,6 +5,7 @@ package Case;
 import Entit.WriteBackData;
 import Util.*;
 import com.alibaba.fastjson.JSONObject;
+import org.testng.log4testng.Logger;
 
 import java.util.Map;
 
@@ -13,11 +14,8 @@ import java.util.Map;
  */
 public class ExcelUtilTest6 {
 
-    public void info(){
-
-    }
     public static void main(String[] args) throws Exception {
-
+        //Logger logger=Logger.getLogger(ExcelUtil.class);
 
         String apiId="";
         String CaseId="";
@@ -51,7 +49,7 @@ public class ExcelUtilTest6 {
 
 
             TestData=VariableUtil.relacevariable(TestData);
-            //Object object1 = objects[2].toString();
+            // Object object1 = objects[2].toString();
             Map<String, String>   pamar = (Map<String, String>) JSONObject.parse(TestData);
             String url = RestUtil.geturlByApiId(apiId);
             String type = RestUtil.geturlBytype(apiId);
@@ -72,7 +70,7 @@ public class ExcelUtilTest6 {
           // 这个方法很浪费时间
           //ExcelUtil.writeAxtualResponseData("F:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase-v4.xls","用例",CaseId,"AxtualResponseData",reult);
             // 这个方法不浪费时间
-           ExcelUtil.batchWriteBackDatas("F:\\AutoTest\\InterfaceAutomation\\src\\test\\resources\\GetCase-v5.xls");
+           ExcelUtil.batchWriteBackDatas("F:\\AutoTest\\InterfaceAutomation\\src\\test\\resources\\GetCase-v6.xls");
 
 
 

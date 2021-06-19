@@ -16,9 +16,7 @@ import java.util.Map;
  */
 public class ExcelUtilTest5 {
 
-    public void info(){
 
-    }
     public static void main(String[] args) throws Exception {
 
 

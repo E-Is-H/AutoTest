@@ -14,7 +14,7 @@ public class CaseUtil {
     static {
         //将所有的数据解析封装到cases中
         try {
-            ExcelUtil.load("F:\\AutoTest\\InterfaceAutomation\\src\\test\\resources\\GetCase-v5.xls","用例",Case3.class);
+            ExcelUtil.load("src/test/resources/GetCase-v6.xls","用例",Case3.class);
         } catch (Exception e) {
             e.printStackTrace();
         }

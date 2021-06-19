@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!--套件-->
 <suite name="futureloan">
+    <!--测试集/模块-->
     <test name="register">
-        <class name=""></class>
+       <classes>
+
+           <class name="Case.ExcelUtilTest7"/>
+       </classes>
     </test>
-
-
-
 </suite>

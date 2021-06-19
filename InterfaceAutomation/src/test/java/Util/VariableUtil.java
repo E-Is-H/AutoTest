@@ -11,7 +11,7 @@ public class VariableUtil {
     static {
         try {
             // 加载数据
-            ExcelUtil.load("F:\\AutoTest\\InterfaceAutomation\\src\\test\\resources\\GetCase-v5.xls", "变量", Variable.class);
+            ExcelUtil.load("src/test/resources/GetCase-v6.xls", "变量", Variable.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -37,7 +37,15 @@ public class VariableUtil {
      * @return
      */
     public static String relacevariable(String TestData){
-       // 获取变量名，返回set
+        for (Variable variable:variableList){
+            String name=variable.getName();
+            String value=variable.getValue();
+            // 放入map中
+            variableMap.put(name,value);
+        }
+
+
+        // 获取变量名，返回set
        Set<String> variableKey=variableMap.keySet();
        // 循环处理key值
        for (String variableString:variableKey){

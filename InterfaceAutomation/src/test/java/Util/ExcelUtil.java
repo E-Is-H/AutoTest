@@ -27,7 +27,7 @@ public class ExcelUtil {
 
     static {
         //映射数据加载
-        loadRownumAndCellnumMapp("F:\\AutoTest\\InterfaceAutomation\\src\\test\\resources\\GetCase-v5.xls","用例");
+        loadRownumAndCellnumMapp("src/test/resources/GetCase-v6.xls","用例");
     }
 
     private static void loadRownumAndCellnumMapp(String excelpath, String sheetname) {
@@ -67,7 +67,6 @@ public class ExcelUtil {
                 firstcell.setCellType(CellType.STRING);
                 String caseId=firstcell.getStringCellValue();
                 int rownum =datarow.getRowNum();
-                System.out.print(caseId+"]]]]]]]]]]]]]]]]]]");
                 rowvaule.put(caseId, rownum);
 
 
@@ -144,9 +143,7 @@ public class ExcelUtil {
         Workbook workbook= null;
         try {
             workbook = WorkbookFactory.create(new File(excelpath));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InvalidFormatException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         //创建sheet对象
@@ -213,18 +210,7 @@ public class ExcelUtil {
         //获取列
     }
 
-    public static void main(String[] args) throws Exception {
 
-        ExcelUtil.load("F:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase-v4.xls","用例",Case3.class);
-        for (Case3 cs :CaseUtil.cases){
-            System.out.print(cs);
-            System.out.print("\n");
-        }
-        for (Rest cs :RestUtil.rests){
-            System.out.print(cs);
-            System.out.print("\n");
-        }
-    }
 
 
     /**
@@ -263,11 +249,13 @@ public class ExcelUtil {
         }finally {
 
                 try {
-                    if(inputStream!=null) {
-                        inputStream.close();
-                    }else if (outputStream!=null){
+                    if (outputStream!=null){
                         outputStream.close();
                     }
+                    if(inputStream!=null) {
+                        inputStream.close();
+                    }
+
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -286,9 +274,11 @@ public class ExcelUtil {
     public static void batchWriteBackDatas(String Path) {
         InputStream inputStream=null;
         OutputStream outputStream=null;
+        File file=new File(Path);
+
         try {
             /* 读取文件*/
-            inputStream=new FileInputStream(new File(Path));
+            inputStream=new FileInputStream(file);
             /* 获取整个excel表格*/
             Workbook workbook=WorkbookFactory.create(inputStream);
             /* 循环获取writeBackDataList对象数组中的数据*/
@@ -315,21 +305,25 @@ public class ExcelUtil {
                 String result=writeBackData.getResult();
                 /* 数据已经放入表格中*/
                 cell.setCellValue(result);
+                 //inputStream.close();
+
                 /* 写入数据*/
             }
-            outputStream=new FileOutputStream(new File(Path));
-            workbook.write(outputStream);
 
-
+                outputStream = new FileOutputStream(file);
+                workbook.write(outputStream);
+                //workbook.write(outputStream);
+            
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
 
                 try {
+                    if (outputStream!=null){
+                        outputStream.close();
+                    }
                     if (inputStream!=null) {
                         inputStream.close();
-                    }else if (outputStream!=null){
-                        outputStream.close();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
