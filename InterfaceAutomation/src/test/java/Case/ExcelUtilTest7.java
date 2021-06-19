@@ -72,7 +72,7 @@ public class ExcelUtilTest7 {
                 // 这个方法很浪费时间
                 //ExcelUtil.writeAxtualResponseData("F:\\AutoTest\\InterfaceAutomation\\src\\main\\java\\CaseData\\GetCase-v4.xls","用例",CaseId,"AxtualResponseData",reult);
                 // 这个方法不浪费时间
-                ExcelUtil.batchWriteBackDatas("src/test/resources/GetCase-v6.xls");
+                ExcelUtil.batchWriteBackDatas(System.getProperty("user.dir")+"\\src\\test\\resources\\GetCase-v6.xls");
 
 
 

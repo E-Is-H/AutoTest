@@ -27,7 +27,7 @@ public class ExcelUtil {
 
     static {
         //映射数据加载
-        loadRownumAndCellnumMapp("src/test/resources/GetCase-v6.xls","用例");
+        loadRownumAndCellnumMapp(System.getProperty("user.dir")+"\\src\\test\\resources\\GetCase-v6.xls","用例");
     }
 
     private static void loadRownumAndCellnumMapp(String excelpath, String sheetname) {

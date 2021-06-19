@@ -9,7 +9,7 @@ public class RestUtil {
     public  static List<Rest> rests= new ArrayList<Rest>();
     static{
         try {
-            ExcelUtil.load("src/test/resources/GetCase-v6.xls","接口地址",Rest.class);
+            ExcelUtil.load(System.getProperty("user.dir")+"\\src\\test\\resources\\GetCase-v6.xls","接口地址",Rest.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
