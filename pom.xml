@@ -11,6 +11,7 @@
     <modules>
         <module>InterfaceAutomation</module>
         <module>UIAutomation</module>
+        <module>SummaryInterfaceAutomation</module>
     </modules>
 
 

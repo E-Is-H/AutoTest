@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="futureloan" duration-ms="3763" started-at="2021-06-19T10:26:28Z" finished-at="2021-06-19T10:26:32Z">
+  <suite name="futureloan" duration-ms="83" started-at="2021-06-19T14:49:26Z" finished-at="2021-06-19T14:49:26Z">
     <groups>
     </groups>
-    <test name="register" duration-ms="3763" started-at="2021-06-19T10:26:28Z" finished-at="2021-06-19T10:26:32Z">
+    <test name="register" duration-ms="83" started-at="2021-06-19T14:49:26Z" finished-at="2021-06-19T14:49:26Z">
       <class name="Case.ExcelUtilTest7">
-        <test-method status="PASS" signature="login()[pri:0, instance:Case.ExcelUtilTest7@1d251891]" name="login" duration-ms="3740" started-at="2021-06-19T10:26:28Z" finished-at="2021-06-19T10:26:32Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:Case.ExcelUtilTest7@566776ad]" name="login" duration-ms="45" started-at="2021-06-19T14:49:26Z" finished-at="2021-06-19T14:49:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
