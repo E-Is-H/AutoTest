@@ -1,5 +1,7 @@
 package Util;
 
+import Entity.AddressCaseEntity;
+import Entity.CaseDataEntity;
 import Entity.CaseEntity;
 import org.apache.poi.ss.formula.functions.T;
 import org.apache.poi.ss.usermodel.*;
@@ -21,8 +23,6 @@ public class ExcelReadWriteUtil {
 
     public static  <T> List<T> ReadExcel(String excelpath, String sheetName, Class<T> calss) {
        List<T> list=new ArrayList<T>();
-        excelpath = "F:\\AutoTest\\SummaryInterfaceAutomation\\src\\test\\resources\\GetCase-v6.xls";
-        sheetName = "用例";
 
 
         // 获取工作表格
@@ -55,10 +55,12 @@ public class ExcelReadWriteUtil {
             }
             /*获取最后一行列数*/
             int rowLastNum = sheet.getLastRowNum();
-            // 创建实例化对象,未for【j】循环提供使用
-            T newInstanceObject = calss.newInstance();
+
             /* 循环处理每一行*/
-            for (int i = 1; i < rowLastNum; i++) {
+            for (int i = 1; i <=rowLastNum; i++) {
+                // 创建实例化对象,未for【j】循环提供使用
+                T newInstanceObject = calss.newInstance();
+
                 /* 获取每一行*/
                 Row row = sheet.getRow(i);
                 /* 根据每一行数据，获取到每一列的数据*/
@@ -67,9 +69,6 @@ public class ExcelReadWriteUtil {
                     Cell cell = row.getCell(j);
                     //判断一下未null跳过
                     if (cell!=null) {
-
-
-
                         /* 设置单元格的类型*/
                         cell.setCellType(CellType.STRING);
                         /* 获取每一个单元格的数据*/
@@ -93,15 +92,24 @@ public class ExcelReadWriteUtil {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            try {
+               inputStream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
 return  list;
     }
 
     public static void main(String[] args) {
+        List<AddressCaseEntity> textAndPoints =new ArrayList<AddressCaseEntity>();
 
-        List<CaseEntity> list=ExcelReadWriteUtil.ReadExcel("F:\\AutoTest\\SummaryInterfaceAutomation\\src\\test\\resources\\GetCase-v6.xls", "用例",CaseEntity.class);
-        for (CaseEntity list1:list){
+        textAndPoints=ExcelReadWriteUtil.ReadExcel("F:\\AutoTest\\SummaryInterfaceAutomation\\src\\test\\resources\\GetCase-v6.xls", "接口地址", AddressCaseEntity.class);
+
+
+      for (AddressCaseEntity list1:textAndPoints){
             System.out.println(list1);
         }
 

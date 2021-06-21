@@ -141,8 +141,10 @@ public class ExcelUtil {
        // Class clazz = tClass;
         //创建workbook对象
         Workbook workbook= null;
+        InputStream inputStream=null;
         try {
-            workbook = WorkbookFactory.create(new File(excelpath));
+            inputStream=new FileInputStream(new File(excelpath));
+            workbook = WorkbookFactory.create(inputStream);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -208,6 +210,7 @@ public class ExcelUtil {
         }
         //获取行
         //获取列
+        inputStream.close();
     }
 
 
