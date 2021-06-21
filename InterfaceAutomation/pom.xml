@@ -49,30 +49,79 @@
             <version>6.14.3</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.uncommons</groupId>
+            <artifactId>reportng</artifactId>
+            <version>1.1.4</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.testng</groupId>
+                    <artifactId>testng</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>3.0</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
+
 
 
     <build>
         <plugins>
+
+            <!--添加插件 关联testng-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.20.1</version>
                 <configuration>
-                    <!--忽略测试套件执行过程失败的测试方法，继续执行剩余的测试类和方法-->
+                    <!-- 解决maven test命令时console出现中文乱码乱码 -->
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <!--指定构建过程中的编码格式-->
-                    <argLine>
-                        -DFile.encoding=UTF-8
-                    </argLine>
-                    <!--指定构建时要执行的套件文件的路径-->
                     <suiteXmlFiles>
-                        <suiteXmlFile>suite.xml</suiteXmlFile>
+                        <file>testng.xml</file>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
-        </plugins>
-    </build>
 
+            <!-- 添加插件,添加ReportNg的监听器，修改最后的TestNg的报告 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <properties>
+                        <property>
+                            <name>usedefaultlisteners</name>
+                            <value>false</value>
+                        </property>
+                        <property>
+                            <name>listener</name>
+                            <value>org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter</value>
+                        </property>
+                    </properties>
+                    <workingDirectory>target/</workingDirectory>
+                    <!-- <forkMode>always</forkMode> -->
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.7</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
     <!--插件，使用maven命令启动testng-->
 
 
