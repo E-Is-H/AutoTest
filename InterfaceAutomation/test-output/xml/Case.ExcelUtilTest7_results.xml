@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="0.761">
+           time="2.021">
   <properties />
   
   
-            <testcase name="login" time="0.761" classname="Case.ExcelUtilTest7" />
+            <testcase name="login" time="2.021" classname="Case.ExcelUtilTest7" />
       
 </testsuite>
