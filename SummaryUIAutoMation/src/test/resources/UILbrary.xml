@@ -1,0 +1,10 @@
+<pages>
+    <!--定义一个page对象-->
+    <page keyword="登录页面">
+        <!--keywoed：页面元素的关键字，by：定位元素的方法，value：选择器的值-->
+        <UIElement keyword="用户名" by="id" value="Username"></UIElement>
+        <UIElement keyword="密码" by="id" value="Password"></UIElement>
+    </page>
+
+
+</pages>
