@@ -1,6 +1,7 @@
 package Entity;
 
 public class CaseDataEntity {
+    private String CaseId;
     private String IsEegtive;
     private String Desc;
     private String Username;
@@ -11,13 +12,22 @@ public class CaseDataEntity {
     @Override
     public String toString() {
         return "CaseDataEntity{" +
-                "IsEegtive='" + IsEegtive + '\'' +
+                "CaseId='" + CaseId + '\'' +
+                ", IsEegtive='" + IsEegtive + '\'' +
                 ", Desc='" + Desc + '\'' +
-                ", username='" + Username + '\'' +
+                ", Username='" + Username + '\'' +
                 ", Password='" + Password + '\'' +
                 ", ExpectedResponseData='" + ExpectedResponseData + '\'' +
                 ", AxtualResponseData='" + AxtualResponseData + '\'' +
                 '}';
+    }
+
+    public String getCaseId() {
+        return CaseId;
+    }
+
+    public void setCaseId(String caseId) {
+        CaseId = caseId;
     }
 
     public String getIsEegtive() {
@@ -41,7 +51,7 @@ public class CaseDataEntity {
     }
 
     public void setUsername(String username) {
-        this.Username = username;
+        Username = username;
     }
 
     public String getPassword() {
