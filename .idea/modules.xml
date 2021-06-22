@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AtuoTest.iml" filepath="$PROJECT_DIR$/AtuoTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/InterfaceAutomation/Chapter5.iml" filepath="$PROJECT_DIR$/InterfaceAutomation/Chapter5.iml" />
       <module fileurl="file://$PROJECT_DIR$/SummaryInterfaceAutomation/SummaryInterfaceAutomation.iml" filepath="$PROJECT_DIR$/SummaryInterfaceAutomation/SummaryInterfaceAutomation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SummaryUIAutoMation/SummaryUIAutoMation.iml" filepath="$PROJECT_DIR$/SummaryUIAutoMation/SummaryUIAutoMation.iml" />
       <module fileurl="file://$PROJECT_DIR$/UIAutomation/UIAutomation.iml" filepath="$PROJECT_DIR$/UIAutomation/UIAutomation.iml" />
     </modules>
   </component>
