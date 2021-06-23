@@ -13,7 +13,6 @@ public class OpenBrowse {
     public static WebDriver Open(WebDriver webDriver,String browsername,String url)throws  Exception{
         if (browsername.equals("chrome")){
             setProperty("webdriver.chrome.driver", getProperty("user.dir")+"\\SummaryUIAutoMation\\src\\test\\java\\driver\\chromedriver.exe");
-            webDriver = new ChromeDriver();
 
 
         }else if(browsername.equals("ie")){

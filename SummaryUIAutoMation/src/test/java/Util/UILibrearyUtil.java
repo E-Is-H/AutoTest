@@ -57,7 +57,7 @@ public class UILibrearyUtil {
                // 将每个元素封装成UI类型对象
                 List<UIElement> uiElementList=new ArrayList<UIElement>();
                 // 循环处理
-                for (Element uielement: uiElements){
+                 for (Element uielement: uiElements){
                    String uiElementkeyword= uielement.attributeValue("keyword");
                     System.out.print(uiElementkeyword);
                     String uiElementby=uielement.attributeValue("by");
