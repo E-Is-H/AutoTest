@@ -13,6 +13,7 @@
         <module>UIAutomation</module>
         <module>SummaryInterfaceAutomation</module>
         <module>SummaryUIAutoMation</module>
+        <module>UIBehaviorDriven</module>
     </modules>
 
 

@@ -1,0 +1,11 @@
+<pages>
+    <!--定义一个page对象-->
+    <page keyword="登录页面">
+        <!--keywoed：页面元素的关键字，by：定位元素的方法，value：选择器的值-->
+        <UIElement keyword="用户名" by="xpath" value="//*[@id='account']"></UIElement>
+        <UIElement keyword="密码" by="xpath" value="/html/body/form/table/tbody/tr[2]/td[2]/input"></UIElement>
+        <UIElement keyword="登录" by="xpath" value="//*[@id='submit']"></UIElement>
+    </page>
+
+
+</pages>
