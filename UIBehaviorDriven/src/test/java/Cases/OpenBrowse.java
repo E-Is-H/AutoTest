@@ -1,10 +1,14 @@
 package Cases;
 
+import Util.UILibrearyUtil;
+import com.beust.jcommander.Parameter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.*;
+
 
 import static java.lang.System.getProperty;
 import static java.lang.System.setProperty;
@@ -12,52 +16,72 @@ import static java.lang.System.setProperty;
 public class OpenBrowse {
     public static WebDriver webDriver;
 
-    //打开浏览器，打开网址
-    public static WebDriver Open(WebDriver webDriver,String browsername,String url)throws  Exception{
+    //打开浏览器
+    @Parameters(value ={"browsername"})
+    @BeforeSuite
+    public static void Open(String browsername)throws  Exception{
         if (browsername.equals("chrome")){
-            setProperty("webdriver.chrome.driver", getProperty("user.dir")+"\\SummaryUIAutoMation\\src\\test\\java\\driver\\chromedriver.exe");
-
+            setProperty("webdriver.chrome.driver", getProperty("user.dir")+"\\src\\test\\java\\driver\\chromedriver.exe");
+            webDriver = new ChromeDriver();
 
         }else if(browsername.equals("ie")){
-           setProperty("webdriver.chrome.driver", getProperty("user.dir")+"src\\test\\java\\driver\\chromedriver.exe");
+            setProperty("webdriver.chrome.driver", getProperty("user.dir")+"src\\test\\java\\driver\\chromedriver.exe");
             webDriver=new InternetExplorerDriver();
 
         }else if(browsername.equals("ff")){
-           setProperty("webdriver.chrome.driver", getProperty("user.dir")+"src\\test\\java\\driver\\chromedriver.exe");
+            setProperty("webdriver.chrome.driver", getProperty("user.dir")+"src\\test\\java\\driver\\chromedriver.exe");
             webDriver=new FirefoxDriver();
 
         }
-        webDriver.get(url);
-        //放大浏览器
         webDriver.manage().window().maximize();
-        return webDriver;
+
+        //放大浏览器
+
+
     }
 
     /**
-     * 访问
-     * @param webElement
-     * @param content
+     * 访问页面地址
+     * @param url
      */
-    public  void  to(String url){
 
+    public  static  void  to(String url){
+        webDriver.get(url);
     }
 
     /**
      * 输入数据
-     * @param webElement
+     * @param pageKeyword
+     * @param uiElementKeywprd
      * @param content
      */
-    public  static  void  input(WebElement webElement,String content){
+
+    public  static  void  input(String pageKeyword,String uiElementKeywprd, String content){
+        webDriver.findElement(UILibrearyUtil.getElementByKeyword(pageKeyword,uiElementKeywprd)) .sendKeys(content);
 
     }
 
 
     /**
-     * 点击数据
-     * @param webElement
+     * 点击
+     * @param pageKeyword
+     * @param uiElementKeywprd
      */
-    public static void cicki(WebElement webElement){
-        webElement.click();
+
+
+    public static void cicki(String pageKeyword,String uiElementKeywprd){
+        webDriver.findElement(UILibrearyUtil.getElementByKeyword(pageKeyword,uiElementKeywprd)) .click();
+
+    }
+
+
+
+    /**
+     * 关闭浏览器
+     */
+    @AfterSuite
+    public void colseBrowse(){
+        webDriver.close();
     }
 
 }

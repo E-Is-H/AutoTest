@@ -26,7 +26,7 @@ public class ExcelUtil {
 
     static {
         //映射数据加载
-        loadRownumAndCellnumMapp("F:\\AutoTest\\SummaryUIAutoMation\\src\\test\\resources\\UiDataTest.xls","用例");
+        loadRownumAndCellnumMapp("F:\\AutoTest\\UIBehaviorDriven\\src\\test\\resources\\UiDataTest.xls","用例");
     }
 
     private static void loadRownumAndCellnumMapp(String excelpath, String sheetname) {

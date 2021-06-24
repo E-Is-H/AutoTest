@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/InterfaceAutomation/pom.xml" />
+        <option value="$PROJECT_DIR$/UIBehaviorDriven/pom.xml" />
+        <option value="$PROJECT_DIR$/UIDataDriver/pom.xml" />
       </list>
     </option>
   </component>

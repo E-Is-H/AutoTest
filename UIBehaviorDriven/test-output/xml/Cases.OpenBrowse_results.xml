@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Login"
+           tests="2"
+           failures="1"
+           errors="0"
+           skipped="1"
+           time="0.000">
+  <properties />
+            <testcase name="Open" time="0.000" classname="Cases.OpenBrowse">
+                <failure type="org.testng.TestNGException"
+                  message="
+Can inject only one of &lt;ITestContext, XmlTest&gt; into a @BeforeSuite annotated Open.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection"
+              >
+<![CDATA[org.testng.TestNGException: 
+Can inject only one of <ITestContext, XmlTest> into a @BeforeSuite annotated Open.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+  org.testng.internal.Parameters.checkParameterTypes(Parameters.java:407)
+  org.testng.internal.Parameters.createParametersForMethod(Parameters.java:356)
+  org.testng.internal.Parameters.createParameters(Parameters.java:635)
+  org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:190)
+  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:209)
+  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:401)
+  org.testng.SuiteRunner.run(SuiteRunner.java:364)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+  org.testng.TestNG.runSuites(TestNG.java:1049)
+  org.testng.TestNG.run(TestNG.java:1017)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
+]]>
+      </failure>
+
+          </testcase>
+  
+            <testcase name="colseBrowse" time="0.0" classname="Cases.OpenBrowse">
+          <skipped />
+    </testcase>
+  
+  
+</testsuite>

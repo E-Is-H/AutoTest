@@ -3,6 +3,7 @@ package Util;
 import Cases.OpenBrowse;
 import Entity.PageEntity;
 import Entity.UIElement;
+import com.google.inject.internal.asm.$ClassWriter;
 import com.sun.org.apache.xml.internal.resolver.readers.SAXCatalogReader;
 import org.dom4j.Document;
 import org.dom4j.Element;
@@ -86,7 +87,7 @@ public class UILibrearyUtil {
 
 
     public static By getElementByKeyword(String pageKeyword,String uiElementKeyword){
-        By by=null;
+       By webElement=null;
 // 取出page对象中的数据
         for(PageEntity page: pages){
 // 根据页面关键字，获取Element对象数据
@@ -101,20 +102,21 @@ public class UILibrearyUtil {
 
                         System.out.println(elementBy);
                         /* 封装方法用来判断 by的类型*/
-                        by=getVisibleElement(elementBy,elementvalue);
+                        webElement=getVisibleElement(elementBy,elementvalue);
 
 
                     }
                 }
             }
         }
-        return by;
+        return webElement;
     }
 
     private static By getVisibleElement(String elementBy, String elementvalue) {
+        // 判断页面元素是否存在，存在返回WebElement对象，不存在返回null，这里我让他找20秒左右
+     //WebDriverWait webDriverWait=new WebDriverWait(OpenBrowse.webDriver,20);
 
-
-
+    WebElement webElement=null;
         // 全局变量用来临时储存变量
         By locator=null;
 
@@ -140,11 +142,10 @@ public class UILibrearyUtil {
             System.out.println("元素定位失败......");
         }
 
-// 判断页面元素是否存在，存在返回WebElement对象，不存在返回null，这里我让他找20秒左右
 
+        //webElement =webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
         return locator;
-
 
 
     }

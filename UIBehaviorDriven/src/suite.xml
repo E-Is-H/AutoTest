@@ -2,14 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <!--套件-->
 <suite name="futureloan">
+    <parameter name="browsername" value="chrome"></parameter>
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter" />
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
     </listeners>
     <!--测试集/模块-->
-    <test name="Login">
+    <test name="登录">
        <classes>
-           <class name="Cases.CaseDataEntityCases"/>
+           <class name="Cases.CaseDataEntityCases2"/>
        </classes>
     </test>
 </suite>

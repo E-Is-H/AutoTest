@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="UIAutomation" />
-        <module name="SummaryUIAutoMation" />
         <module name="SummaryInterfaceAutomation" />
-        <module name="Chapter5" />
+        <module name="UIBehaviorDriven" />
         <module name="InterfaceAutomation" />
+        <module name="UIDataDriver" />
+        <module name="Chapter5" />
+        <module name="UIAutomation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,8 +19,9 @@
       <module name="Chapter5" target="1.5" />
       <module name="InterfaceAutomation" target="1.5" />
       <module name="SummaryInterfaceAutomation" target="1.5" />
-      <module name="SummaryUIAutoMation" target="1.5" />
       <module name="UIAutomation" target="1.5" />
+      <module name="UIBehaviorDriven" target="1.5" />
+      <module name="UIDataDriver" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

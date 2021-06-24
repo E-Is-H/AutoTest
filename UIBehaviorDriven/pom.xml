@@ -51,17 +51,13 @@
             <scope>test</scope>
         </dependency>
 
+
+       <!--reportNg 优化测试报告-->
         <dependency>
             <groupId>org.uncommons</groupId>
             <artifactId>reportng</artifactId>
             <version>1.1.4</version>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.testng</groupId>
-                    <artifactId>testng</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.google.inject</groupId>
@@ -69,6 +65,9 @@
             <version>3.0</version>
             <scope>test</scope>
         </dependency>
+
+
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
