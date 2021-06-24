@@ -14,23 +14,19 @@ import java.util.List;
 public class CaseDataEntityCases2 extends OpenBrowse {
 
 
-    @Test
-    public void RunAutoMation() {
+    @Test(dataProvider="getCase")
+    public void RunAutoMation(String CaseId,String Desc,String Username,String Password) {
 
 
-        // 失败的测试用例
-        List<CaseDataEntity> caseDataEntityList = CaseDataEntityUtil.failCaseDataEntity();
-        for (CaseDataEntity caseDataEntity : caseDataEntityList) {
             try {
                 // 访问
                 OpenBrowse.to("http://114.215.239.112:8081/zentao/user-login-L3plbnRhby9teS5odG1s.html");
                 // 输入
-                OpenBrowse.input("登录页面", "用户名", caseDataEntity.getUsername());
-                OpenBrowse.input("登录页面", "密码", caseDataEntity.getPassword());
+                OpenBrowse.input("登录页面", "用户名",Username);
+                OpenBrowse.input("登录页面", "密码", Password);
                 // 点击
                 OpenBrowse.cicki("登录页面", "登录");
-                // 获取测试用例ID，写入数据时使用
-                String CaseId = caseDataEntity.getCaseId();
+
                 Thread.sleep(2000);
                 // 返回的信息
                 String Resultinfo = webDriver.switchTo().alert().getText();
@@ -43,47 +39,49 @@ public class CaseDataEntityCases2 extends OpenBrowse {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
+
         ExcelUtil.batchWriteBackDatas("F:\\AutoTest\\UIBehaviorDriven\\src\\test\\resources\\UiDataTest.xls");
 
     }
 
 
     @DataProvider
-    public static Object[][] getCaseDatasByapId() {
-        // 通过循环找到对应的数据
+    public static Object[][] getCase() {
+       // String cellName[] = {"CaseId", "IsEegtive", "Desc", "Username", "Password", "ExpectedResponseData", "AxtualResponseData"};
+        String cellName[] = {"CaseId","Desc", "Username", "Password"};
+        // 传入一个对象类
+        Class<CaseDataEntity> clazz = CaseDataEntity.class;
+        // 对象数组
         List<CaseDataEntity> caseDataEntityList = CaseDataEntityUtil.failCaseDataEntity();
+        // 行数: 对象的大小，列数：类的属性个数
+        Object[][] objects = new Object[caseDataEntityList.size()][cellName.length];
+        String value = "";
+        // 循环获取对象数据
+        for (int i = 0; i < caseDataEntityList.size(); i++) {
+            // 获取对象值
+            CaseDataEntity caseDataEntity = caseDataEntityList.get(i);
+            // 循环获取每个属性值
+            for (int j = 0; j < cellName.length; j++) {
+                //反射的方法名
+                String methodname = "get" + cellName[j];
+                //反射的方法对象
+                Method method = null;
+                try {
+                    method = method = clazz.getMethod(methodname);
+                    value = (String) method.invoke(caseDataEntity);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
-        Object[] s = (Object[])caseDataEntityList.toArray();
-        Object[][] objects = new Object[s.length][];
-        for(int i=0;i<s.length;i++){
-            objects[i] = (Object[])s[i];
-        }
 
-        return objects;
-
-
-    }
-
-    public static void main(String[] args) {
-        List<CaseDataEntity> caseDataEntityList = CaseDataEntityUtil.failCaseDataEntity();
-
-        Object[] s = (Object[])caseDataEntityList.toArray();
-        Object[][] objects = new Object[s.length][];
-        for(int i=0;i<s.length;i++){
-            objects[i] = (Object[])s[i];
-        }
-
-
-        for(int z=0;z<objects.length;z++){
-            for(int i=0;i<objects[z].length;i++){
-                System.out.println(objects[z][i]);
+                objects[i][j] = value;
             }
         }
+return objects;
 
     }
-
-
 
 
 }
+
+

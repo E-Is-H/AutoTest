@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="登录"
-           tests="1"
+           tests="4"
            failures="0"
            errors="0"
            skipped="0"
-           time="9.845">
+           time="12.166">
   <properties />
   
   
-            <testcase name="RunAutoMation" time="9.845" classname="Cases.CaseDataEntityCases2" />
+            <testcase name="RunAutoMation" time="2.535" classname="Cases.CaseDataEntityCases2" />
+                <testcase name="RunAutoMation" time="4.585" classname="Cases.CaseDataEntityCases2" />
+                <testcase name="RunAutoMation" time="2.528" classname="Cases.CaseDataEntityCases2" />
+                <testcase name="RunAutoMation" time="2.518" classname="Cases.CaseDataEntityCases2" />
       
 </testsuite>

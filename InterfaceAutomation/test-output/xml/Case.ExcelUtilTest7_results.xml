@@ -1,13 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="register"
            tests="1"
-           failures="0"
+           failures="1"
            errors="0"
            skipped="0"
-           time="2.021">
+           time="2.193">
   <properties />
+            <testcase name="login" time="2.193" classname="Case.ExcelUtilTest7">
+                <failure type="org.apache.http.conn.HttpHostConnectException"
+                  message="Connect to 127.0.0.1:8899 [/127.0.0.1] failed: Connection refused: connect"
+              >
+<![CDATA[org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:8899 [/127.0.0.1] failed: Connection refused: connect
+  org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+  org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+  org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+  org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+  org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+  org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+  org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+  org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+  org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+  org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+  Util.HttpClientTools.doPost(HttpClientTools.java:81)
+  Util.HttpClientTools.doService(HttpClientTools.java:143)
+  Case.ExcelUtilTest7.login(ExcelUtilTest7.java:58)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+  org.testng.TestRunner.privateRun(TestRunner.java:648)
+  org.testng.TestRunner.run(TestRunner.java:505)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+  org.testng.SuiteRunner.run(SuiteRunner.java:364)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+  org.testng.TestNG.runSuites(TestNG.java:1049)
+  org.testng.TestNG.run(TestNG.java:1017)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
+Caused by: java.net.ConnectException: Connection refused: connect
+  java.net.DualStackPlainSocketImpl.connect0(Native Method)
+  java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+  java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+  java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+  java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+  java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+  java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+  java.net.Socket.connect(Socket.java:589)
+  org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+  org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+  org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+  org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+  org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+  org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+  org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+  org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+  org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+  org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+  org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+  Util.HttpClientTools.doPost(HttpClientTools.java:81)
+  Util.HttpClientTools.doService(HttpClientTools.java:143)
+  Case.ExcelUtilTest7.login(ExcelUtilTest7.java:58)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+  org.testng.TestRunner.privateRun(TestRunner.java:648)
+  org.testng.TestRunner.run(TestRunner.java:505)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+  org.testng.SuiteRunner.run(SuiteRunner.java:364)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+  org.testng.TestNG.runSuites(TestNG.java:1049)
+  org.testng.TestNG.run(TestNG.java:1017)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
+]]>
+      </failure>
+
+          </testcase>
   
   
-            <testcase name="login" time="2.021" classname="Case.ExcelUtilTest7" />
-      
+  
 </testsuite>

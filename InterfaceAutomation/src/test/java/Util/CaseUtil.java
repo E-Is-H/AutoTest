@@ -38,6 +38,9 @@ public class CaseUtil {
         }
         //case3s.size():对象数据的大小，cellName.length：数据的列书
         Object[][] datas=new Object[case3s.size()][cellName.length];
+
+
+
         for (int i=0;i<case3s.size();i++){
             //Case3 获取每一个对象数据
             Case3 cs =case3s.get(i);
