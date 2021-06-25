@@ -4,9 +4,9 @@
            failures="4"
            errors="0"
            skipped="0"
-           time="9.832">
+           time="9.750">
   <properties />
-            <testcase name="RunAutoMation" time="2.352" classname="Cases.CaseDataEntityCases2">
+            <testcase name="RunAutoMation" time="2.333" classname="Cases.CaseDataEntityCases2">
                 <failure type="java.lang.AssertionError"
                   message="expected [true] but found [false]"
               >
@@ -15,7 +15,7 @@
   org.testng.Assert.failNotEquals(Assert.java:776)
   org.testng.Assert.assertTrue(Assert.java:44)
   org.testng.Assert.assertTrue(Assert.java:54)
-  Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:39)
+  Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:40)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -51,7 +51,7 @@
       </failure>
 
           </testcase>
-            <testcase name="RunAutoMation" time="2.326" classname="Cases.CaseDataEntityCases2">
+            <testcase name="RunAutoMation" time="2.337" classname="Cases.CaseDataEntityCases2">
                 <failure type="java.lang.AssertionError"
                   message="expected [true] but found [false]"
               >
@@ -60,7 +60,7 @@
   org.testng.Assert.failNotEquals(Assert.java:776)
   org.testng.Assert.assertTrue(Assert.java:44)
   org.testng.Assert.assertTrue(Assert.java:54)
-  Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:39)
+  Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:40)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -96,7 +96,7 @@
       </failure>
 
           </testcase>
-            <testcase name="RunAutoMation" time="2.788" classname="Cases.CaseDataEntityCases2">
+            <testcase name="RunAutoMation" time="2.301" classname="Cases.CaseDataEntityCases2">
                 <failure type="java.lang.AssertionError"
                   message="expected [true] but found [false]"
               >
@@ -105,7 +105,7 @@
   org.testng.Assert.failNotEquals(Assert.java:776)
   org.testng.Assert.assertTrue(Assert.java:44)
   org.testng.Assert.assertTrue(Assert.java:54)
-  Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:39)
+  Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:40)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -141,7 +141,7 @@
       </failure>
 
           </testcase>
-            <testcase name="RunAutoMation" time="2.366" classname="Cases.CaseDataEntityCases2">
+            <testcase name="RunAutoMation" time="2.779" classname="Cases.CaseDataEntityCases2">
                 <failure type="java.lang.AssertionError"
                   message="expected [true] but found [false]"
               >
@@ -150,7 +150,7 @@
   org.testng.Assert.failNotEquals(Assert.java:776)
   org.testng.Assert.assertTrue(Assert.java:44)
   org.testng.Assert.assertTrue(Assert.java:54)
-  Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:39)
+  Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:40)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

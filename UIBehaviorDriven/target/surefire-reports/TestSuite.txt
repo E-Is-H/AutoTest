@@ -1,36 +1,36 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 17.623 sec <<< FAILURE!
-RunAutoMation(Cases.CaseDataEntityCases2)  Time elapsed: 2.792 sec  <<< FAILURE!
+Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 17.473 sec <<< FAILURE!
+RunAutoMation(Cases.CaseDataEntityCases2)  Time elapsed: 2.783 sec  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:96)
 	at org.testng.Assert.failNotEquals(Assert.java:776)
 	at org.testng.Assert.assertTrue(Assert.java:44)
 	at org.testng.Assert.assertTrue(Assert.java:54)
-	at Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:39)
+	at Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:40)
 
-RunAutoMation(Cases.CaseDataEntityCases2)  Time elapsed: 2.326 sec  <<< FAILURE!
+RunAutoMation(Cases.CaseDataEntityCases2)  Time elapsed: 2.301 sec  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:96)
 	at org.testng.Assert.failNotEquals(Assert.java:776)
 	at org.testng.Assert.assertTrue(Assert.java:44)
 	at org.testng.Assert.assertTrue(Assert.java:54)
-	at Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:39)
+	at Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:40)
 
-RunAutoMation(Cases.CaseDataEntityCases2)  Time elapsed: 2.352 sec  <<< FAILURE!
+RunAutoMation(Cases.CaseDataEntityCases2)  Time elapsed: 2.337 sec  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:96)
 	at org.testng.Assert.failNotEquals(Assert.java:776)
 	at org.testng.Assert.assertTrue(Assert.java:44)
 	at org.testng.Assert.assertTrue(Assert.java:54)
-	at Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:39)
+	at Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:40)
 
-RunAutoMation(Cases.CaseDataEntityCases2)  Time elapsed: 2.366 sec  <<< FAILURE!
+RunAutoMation(Cases.CaseDataEntityCases2)  Time elapsed: 2.333 sec  <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:96)
 	at org.testng.Assert.failNotEquals(Assert.java:776)
 	at org.testng.Assert.assertTrue(Assert.java:44)
 	at org.testng.Assert.assertTrue(Assert.java:54)
-	at Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:39)
+	at Cases.CaseDataEntityCases2.RunAutoMation(CaseDataEntityCases2.java:40)
 

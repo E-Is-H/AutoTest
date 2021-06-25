@@ -1,19 +1,22 @@
 package Cases;
 
 import Util.UILibrearyUtil;
-import com.beust.jcommander.Parameter;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.*;
 
 
+import java.util.logging.Logger;
+
 import static java.lang.System.getProperty;
 import static java.lang.System.setProperty;
 
 public class OpenBrowse {
+    private static Logger Log = Logger.getLogger(OpenBrowse.class.getName());
     public static WebDriver webDriver;
 
     //打开浏览器
@@ -46,6 +49,7 @@ public class OpenBrowse {
      */
 
     public  static  void  to(String url){
+        Log.info(url);
         webDriver.get(url);
     }
 
@@ -57,6 +61,9 @@ public class OpenBrowse {
      */
 
     public  static  void  input(String pageKeyword,String uiElementKeywprd, String content){
+        Log.info(pageKeyword);
+        Log.info(uiElementKeywprd);
+        Log.info(content);
         webDriver.findElement(UILibrearyUtil.getElementByKeyword(pageKeyword,uiElementKeywprd)) .sendKeys(content);
 
     }
