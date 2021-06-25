@@ -56,8 +56,8 @@ public class CustomListener extends TestListenerAdapter {
 
          String absoluteFile= file.getAbsolutePath();
          String access=absoluteFile.replace(toBeReplaced,replacement);
-          String img="<img src='"+access+"' height='100' width='100'><a herf='"+access+"' target='_blank'>点击查看大图</a></img>";
-        ;
+          String img="<img src='"+access+"' height='100' width='100'><a href='"+access+"' target='_blank'>点击查看大图</a></img>";
+
 
 
 
