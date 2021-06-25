@@ -21,7 +21,7 @@ public class OpenBrowse {
     @BeforeSuite
     public static void Open(String browsername)throws  Exception{
         if (browsername.equals("chrome")){
-            setProperty("webdriver.chrome.driver", getProperty("user.dir")+"\\src\\test\\java\\Util\\chromedriver.exe");
+            setProperty("webdriver.chrome.driver","F:\\AutoTest\\UIBehaviorDriven\\src\\test\\java\\driver\\chromedriver.exe");
             webDriver = new ChromeDriver();
 
         }else if(browsername.equals("ie")){

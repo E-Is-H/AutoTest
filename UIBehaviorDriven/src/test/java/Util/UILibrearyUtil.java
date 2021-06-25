@@ -1,17 +1,13 @@
 package Util;
 
-import Cases.OpenBrowse;
+
 import Entity.PageEntity;
 import Entity.UIElement;
-import com.google.inject.internal.asm.$ClassWriter;
-import com.sun.org.apache.xml.internal.resolver.readers.SAXCatalogReader;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import java.io.*;
@@ -150,10 +146,6 @@ public class UILibrearyUtil {
 
     }
 
-    public static void main(String[] args) {
 
-        System.out.println(UILibrearyUtil.getElementByKeyword("登录页面","用户名"));
-
-    }
 
 }

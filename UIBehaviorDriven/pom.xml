@@ -82,6 +82,19 @@
             <version>1.6.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.4</version>
+            <scope>test</scope>
+        </dependency>
+
+
     </dependencies>
 
 
@@ -95,11 +108,15 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.20.1</version>
                 <configuration>
+
+                    <systemPropertyVariables>
+                        <org.uncommons.reportng.escape-output>false</org.uncommons.reportng.escape-output>
+                    </systemPropertyVariables>
                     <!-- 解决maven test命令时console出现中文乱码乱码 -->
-                    <argLine>-Dfile.encoding=UTF-8</argLine>
+
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
-                        <file>testng.xml</file>
+                        <file>src\suite.xml</file>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
@@ -124,6 +141,29 @@
                     <!-- <forkMode>always</forkMode> -->
                 </configuration>
             </plugin>
+
+
+
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <verbose>true</verbose>
+                    <fork>true</fork>
+                    <encoding>UTF-8</encoding>
+                    <!--你的jdk地址-->
+                    <executable>C:\Program Files (x86)\Java\jdk1.8.0_191\bin\javac</executable>
+                </configuration>
+            </plugin>
+
+
+
+
+
         </plugins>
 
         <pluginManagement>
@@ -134,24 +174,13 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+
+
+
+
+
     </build>
     <!--插件，使用maven命令启动testng-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

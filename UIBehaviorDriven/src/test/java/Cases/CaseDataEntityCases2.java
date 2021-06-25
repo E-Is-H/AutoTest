@@ -4,6 +4,7 @@ import Entity.CaseDataEntity;
 import Entity.WriteBackData;
 import Util.CaseDataEntityUtil;
 import Util.ExcelUtil;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -35,7 +36,7 @@ public class CaseDataEntityCases2 extends OpenBrowse {
                 ExcelUtil.writeBackDataList.add(writeBackData);
                 // 确定弹窗
                 webDriver.switchTo().alert().accept();
-
+                Assert.assertTrue(false);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -51,6 +52,7 @@ public class CaseDataEntityCases2 extends OpenBrowse {
         String cellName[] = {"CaseId","Desc", "Username", "Password"};
         // 传入一个对象类
         Class<CaseDataEntity> clazz = CaseDataEntity.class;
+
         // 对象数组
         List<CaseDataEntity> caseDataEntityList = CaseDataEntityUtil.failCaseDataEntity();
         // 行数: 对象的大小，列数：类的属性个数
@@ -60,6 +62,7 @@ public class CaseDataEntityCases2 extends OpenBrowse {
         for (int i = 0; i < caseDataEntityList.size(); i++) {
             // 获取对象值
             CaseDataEntity caseDataEntity = caseDataEntityList.get(i);
+
             // 循环获取每个属性值
             for (int j = 0; j < cellName.length; j++) {
                 //反射的方法名

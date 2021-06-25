@@ -3,11 +3,18 @@
 <!--套件-->
 <suite name="自动化测试">
     <parameter name="browsername" value="chrome"></parameter>
+
+    <!--定义截图的访问路径-->
+
+    <parameter name="apacheDocumentRoot" value="F:\\AutoTest\\UIBehaviorDriven\\test-output"></parameter>
+    <parameter name="host" value="http://localhost"></parameter>
+
+
     <listeners>
         <!--reportNG报表生成类-->
         <listener class-name="org.uncommons.reportng.HTMLReporter" />
         <!--自定义报表生成-->
-        <listener class-name="" />
+        <listener class-name="Util.CustomListener" />
     </listeners>
     <!--测试集/模块-->
     <test name="登录">

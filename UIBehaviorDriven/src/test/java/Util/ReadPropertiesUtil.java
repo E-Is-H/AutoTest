@@ -9,7 +9,7 @@ public class ReadPropertiesUtil {
     public static String getprop(String filename,String propname) throws Exception{
         Properties properties =new Properties();
         //getProperty("user.dir")+"\\src\\test\\java\\com\\selenium\\
-        properties.load(new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\"+filename+".properties"));
+        properties.load(new FileInputStream("F:\\AutoTest\\UIBehaviorDriven\\src\\test\\resources\\"+filename+".properties"));
         String str=properties.getProperty(propname);
         return  str;
 

@@ -20,7 +20,7 @@
       <module name="InterfaceAutomation" target="1.5" />
       <module name="SummaryInterfaceAutomation" target="1.5" />
       <module name="UIAutomation" target="1.5" />
-      <module name="UIBehaviorDriven" target="1.5" />
+      <module name="UIBehaviorDriven" target="1.8" />
       <module name="UIDataDriver" target="1.5" />
     </bytecodeTargetLevel>
   </component>
