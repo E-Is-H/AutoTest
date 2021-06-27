@@ -14,7 +14,7 @@ public class CaseDataEntityUtil {
 
     static{
         try {
-            ExcelUtil.load("F:\\AutoTest\\UIBehaviorDriven\\src\\test\\resources\\UiDataTest.xls","用例",CaseDataEntity.class);
+            ExcelUtil.load(ReadPropertiesUtil.getprop("Paths","ExcelPath"),"用例",CaseDataEntity.class);
         } catch (Exception e) {
             e.printStackTrace();
         }

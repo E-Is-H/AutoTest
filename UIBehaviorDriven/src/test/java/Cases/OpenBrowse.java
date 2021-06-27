@@ -1,5 +1,6 @@
 package Cases;
 
+import Util.ReadPropertiesUtil;
 import Util.UILibrearyUtil;
 
 import org.openqa.selenium.WebDriver;
@@ -24,7 +25,8 @@ public class OpenBrowse {
     @BeforeSuite
     public static void Open(String browsername)throws  Exception{
         if (browsername.equals("chrome")){
-            setProperty("webdriver.chrome.driver","F:\\AutoTest\\UIBehaviorDriven\\src\\test\\java\\driver\\chromedriver.exe");
+            // 调用properties中webdriverpath:   ReadPropertiesUtil.getprop("WebDriverPath", "Paths")
+            setProperty("webdriver.chrome.driver", ReadPropertiesUtil.getprop("Paths", "WebDriverPath"));
             webDriver = new ChromeDriver();
 
         }else if(browsername.equals("ie")){
@@ -49,7 +51,7 @@ public class OpenBrowse {
      */
 
     public  static  void  to(String url){
-        Log.info(url);
+        Log.info("*******************************************开始访问地址"+url);
         webDriver.get(url);
     }
 
@@ -61,9 +63,8 @@ public class OpenBrowse {
      */
 
     public  static  void  input(String pageKeyword,String uiElementKeywprd, String content){
-        Log.info(pageKeyword);
-        Log.info(uiElementKeywprd);
-        Log.info(content);
+        Log.info("*******************************************开始输入测试数据"+pageKeyword);
+        Log.info("*******************************************测试数据"+content);
         webDriver.findElement(UILibrearyUtil.getElementByKeyword(pageKeyword,uiElementKeywprd)) .sendKeys(content);
 
     }
@@ -77,6 +78,7 @@ public class OpenBrowse {
 
 
     public static void cicki(String pageKeyword,String uiElementKeywprd){
+        Log.info("*******************************************下一步操作"+pageKeyword);
         webDriver.findElement(UILibrearyUtil.getElementByKeyword(pageKeyword,uiElementKeywprd)) .click();
 
     }
@@ -88,6 +90,7 @@ public class OpenBrowse {
      */
     @AfterSuite
     public void colseBrowse(){
+        Log.info("*******************************************关闭浏览器");
         webDriver.close();
     }
 

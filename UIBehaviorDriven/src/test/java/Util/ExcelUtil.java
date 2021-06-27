@@ -26,7 +26,11 @@ public class ExcelUtil {
 
     static {
         //映射数据加载
-        loadRownumAndCellnumMapp("F:\\AutoTest\\UIBehaviorDriven\\src\\test\\resources\\UiDataTest.xls","用例");
+        try {
+            loadRownumAndCellnumMapp(ReadPropertiesUtil.getprop("Paths","ExcelPath"),"用例");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private static void loadRownumAndCellnumMapp(String excelpath, String sheetname) {

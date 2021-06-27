@@ -4,6 +4,7 @@ import Entity.CaseDataEntity;
 import Entity.WriteBackData;
 import Util.CaseDataEntityUtil;
 import Util.ExcelUtil;
+import Util.ReadPropertiesUtil;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -15,16 +16,18 @@ import java.util.logging.Logger;
 
 public class CaseDataEntityCases2 extends OpenBrowse {
 
-
+    private static Logger Log = Logger.getLogger(CaseDataEntityCases2.class.getName());
     @Test(dataProvider="getCase")
     public void RunAutoMation(String CaseId,String Desc,String Username,String Password) {
 
 
             try {
-                // 访问
-                OpenBrowse.to("http://114.215.239.112:8081/zentao/user-login-L3plbnRhby9teS5odG1s.html");
+                // 访问   调用properties中BrowesPath访问地址
+                OpenBrowse.to(ReadPropertiesUtil.getprop("Paths", "BrowsePath"));
                 // 输入
+                Log.info("*******************************************UserName"+Username);
                 OpenBrowse.input("登录页面", "用户名",Username);
+                Log.info("*******************************************Password"+Password);
                 OpenBrowse.input("登录页面", "密码", Password);
                 // 点击
                 OpenBrowse.cicki("登录页面", "登录");
@@ -42,7 +45,11 @@ public class CaseDataEntityCases2 extends OpenBrowse {
                 e.printStackTrace();
             }
 
-        ExcelUtil.batchWriteBackDatas("F:\\AutoTest\\UIBehaviorDriven\\src\\test\\resources\\UiDataTest.xls");
+        try {
+            ExcelUtil.batchWriteBackDatas(ReadPropertiesUtil.getprop("ExcelPath","Paths"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 

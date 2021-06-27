@@ -118,22 +118,25 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20.1</version>
+                <version>2.7.1</version>
                 <configuration>
 
                     <systemPropertyVariables>
                         <org.uncommons.reportng.escape-output>false</org.uncommons.reportng.escape-output>
                     </systemPropertyVariables>
                     <!-- 解决maven test命令时console出现中文乱码乱码 -->
-
+                      <argLine>
+                          -Dfile.encoding=UTF-8
+                      </argLine>
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
                         <file>src\suite.xml</file>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
-
-            <!-- 添加插件,添加ReportNg的监听器，修改最后的TestNg的报告 -->
+        </plugins>
+<!--
+             添加插件,添加ReportNg的监听器，修改最后的TestNg的报告
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -150,7 +153,7 @@
                         </property>
                     </properties>
                     <workingDirectory>target/</workingDirectory>
-                    <!-- <forkMode>always</forkMode> -->
+                     <forkMode>always</forkMode>
                 </configuration>
             </plugin>
 
@@ -167,7 +170,7 @@
                     <verbose>true</verbose>
                     <fork>true</fork>
                     <encoding>UTF-8</encoding>
-                    <!--你的jdk地址-->
+                    你的jdk地址
                     <executable>C:\Program Files (x86)\Java\jdk1.8.0_191\bin\javac</executable>
                 </configuration>
             </plugin>
@@ -187,7 +190,7 @@
             </plugins>
         </pluginManagement>
 
-
+-->
 
 
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [自动化测试]">
+  <parameter name="apacheDocumentRoot" value="F:\\AutoTest\\UIBehaviorDriven\\test-output"/>
+  <parameter name="host" value="http://localhost"/>
+  <parameter name="browsername" value="chrome"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="Util.CustomListener"/>
+  </listeners>
+  <test thread-count="5" verbose="0" name="登录(failed)">
+    <classes>
+      <class name="Cases.CaseDataEntityCases2">
+        <methods>
+          <include name="Open"/>
+          <include name="RunAutoMation" invocation-numbers="0 1 2 3"/>
+          <include name="colseBrowse"/>
+        </methods>
+      </class> <!-- Cases.CaseDataEntityCases2 -->
+    </classes>
+  </test> <!-- 登录(failed) -->
+</suite> <!-- Failed suite [自动化测试] -->
